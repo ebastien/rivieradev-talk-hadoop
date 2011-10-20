@@ -45,7 +45,13 @@ code {
   font-weight: bold; }
 
 pre.sh_sourceCode .sh_string {
-  color: #000;
+  color: #32a632;
+  font-family: "Courier New", Courier, monospace; }
+pre.sh_sourceCode .sh_regexp {
+  color: #806e42;
+  font-family: "Courier New", Courier, monospace; }
+pre.sh_sourceCode .sh_specialchar {
+  color: #806e42;
   font-family: "Courier New", Courier, monospace; }
 
 .title_desc {

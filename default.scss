@@ -8,6 +8,10 @@ $darkbrown: #806E42;
 $lightbrown: #F3D27F;
 $lightsand: #F3F0E7;
 
+$codecolor: #000;
+$textcolor: #32A632;
+$regexcolor: #806E42;
+
 body {
   color: #F3F0E7;
   font-family: $mainfont;
@@ -59,9 +63,21 @@ code {
   font-weight: bold;
 }
 
-pre.sh_sourceCode .sh_string {
-  color: #000;
-  font-family: $codefont;
+pre.sh_sourceCode {
+  .sh_string {
+    color: $textcolor;
+    font-family: $codefont;
+  }
+
+  .sh_regexp {
+    color: $regexcolor;
+    font-family: $codefont;
+  }
+
+  .sh_specialchar {
+    color: $regexcolor;
+    font-family: $codefont;
+  }
 }
 
 .title_desc {

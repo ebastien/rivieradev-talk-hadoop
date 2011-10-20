@@ -41,12 +41,20 @@ Hadoop a été inspiré par les publications MapReduce, GoogleFS et BigTable de 
 !SLIDE
 ## Bon vieux terminal... ##
     @@@ sh
-    cat input | grep "key" | sort | uniq –c > output
+                       cat book.txt | \
+    tr -s "[:punct:][:space:]" "\n" | \
+                               sort | \
+                            uniq –c | \
+                                cat > wordcounts
 
 !SLIDE
 ## MapReduce ! ##
     @@@ sh
-    cat input |    Map     | sort | Reduce  > output
+                       cat book.txt | \
+                             MAPPER | \
+                               sort | \
+                            REDUCER | \
+                                cat > wordcounts
 
 !SLIDE
 ## Tâche "Map" ##
@@ -69,6 +77,9 @@ Sortie: résultat final
 !SLIDE center
 <img src="layout2.png"/>
 
+!SLIDE center
+<img src="flow1.png"/>
+
 !SLIDE
 ## Interfaces de programmation MapReduce ##
 
@@ -77,13 +88,13 @@ Sortie: résultat final
 * Une classe implémentant l'interface "Mapper"
 * Une classe implémentant l'interface "Reducer"
 * La définition des entrées et des sorties
-* Le code compilé en JAR
+* Le code compilé dans un JAR
 
 !SLIDE
+## «Word Count», classe Map : ##
     @@@ java
     public void map(
-        LongWritable key,
-        Text value,
+        LongWritable key, Text value,
         OutputCollector<Text, IntWritable> output,
         Reporter reporter) throws IOException {
       
@@ -99,6 +110,7 @@ Sortie: résultat final
     }
 
 !SLIDE
+## «Word Count», classe Reduce : ##
     @@@ java
     public void reduce(
         Text key,
@@ -120,6 +132,7 @@ Sortie: résultat final
 * La définition des entrées et des sorties
 
 !SLIDE
+## «Word Count», tâche Map : ##
     @@@ ruby
     #!/usr/bin/env ruby
     STDIN.each do |line|
@@ -129,6 +142,7 @@ Sortie: résultat final
     end
 
 !SLIDE
+## «Word Count», tâche Reduce : ##
     @@@ ruby
     #!/usr/bin/env ruby
     key, sum = nil, 0
@@ -149,12 +163,72 @@ Sortie: résultat final
 ## Apache Hive ##
 
 !SLIDE
+## «Word Count» partiel, Hive : ##
     @@@ sql
-    [exemple de query Hive]
+    CREATE EXTERNAL TABLE Text(word STRING)
+      LOCATION "/samples/words";
+    FROM Text
+      INSERT OVERWRITE DIRECTORY "/tmp/wordcounts"
+      SELECT word, COUNT(word) as totals
+      GROUP BY word;
 
 !SLIDE
 ## Apache Pig ##
 
 !SLIDE
-    @@@ sql
-    [exemple de word count en Pig]
+## «Word Count», Pig : ##
+    @@@ sh
+    lines = LOAD '/samples/book.txt' USING TextLoader();
+    words = FOREACH lines GENERATE FLATTEN(TOKENIZE($0));
+    grouped = GROUP words BY $0;
+    counts = FOREACH grouped GENERATE group, COUNT(words);
+    STORE counts INTO '/tmp/wordcounts' USING PigStorage();
+
+!SLIDE
+## Cascading ##
+
+!SLIDE
+## «Word Count», Cascading/JRuby ##
+    @@@ ruby
+    cascade 'wordcount' do
+      flow 'wordcount' do
+        source 'input', tap('/samples/book.txt')
+        assembly 'input' do
+          each 'line', :function => regex_split_generator(
+            'word',
+            :pattern => /[.,]*\s+/
+          )
+          group_by 'word' { count }
+          group_by 'count', :reverse => true
+        end
+        sink 'input', tap('/tmp/wordcounts')
+      end
+    end.complete(myproperties)
+
+!SLIDE
+## Hadoop au-delà d'HDFS ##
+* Amazon S3
+* FTP et HTTP
+* CloudStore
+
+!SLIDE
+## Hadoop dans les nuages ##
+* Amazon Elastic MapReduce
+* Microsoft Windows Azure (bientôt)
+
+!SLIDE
+## Evaluer Hadoop chez soi ##
+* Machine virtuelle Cloudera pour VirtualBox et KVM
+* <a href="http://www.cloudera.com/">http://www.cloudera.com/</a>
+
+!SLIDE
+## Références ##
+* <a href="http://hadoop.apache.org">http://hadoop.apache.org</a>
+* <a href="http://hive.apache.org">http://hive.apache.org</a>
+* <a href="http://pig.apache.org">http://pig.apache.org</a>
+* <a href="http://github.com/mrwalker/cascading.jruby">http://github.com/mrwalker/cascading.jruby</a>
+* <a href="http://www.cloudera.com">http://www.cloudera.com</a>
+* <a href="http://aws.amazon.com/fr/elasticmapreduce">http://aws.amazon.com/fr/elasticmapreduce</a>
+* <a href="http://www.microsoft.com/windowsazure">http://www.microsoft.com/windowsazure</a>
+
+
