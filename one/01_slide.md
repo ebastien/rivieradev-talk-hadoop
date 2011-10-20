@@ -250,11 +250,15 @@ Sortie: résultat final
 * Machine virtuelle Cloudera pour VirtualBox et KVM
 * <a href="http://www.cloudera.com/">http://www.cloudera.com/</a>
 
+!SLIDE center
+<img src="hadoop-defguide.jpg" alt="Hadoop - The Definitive Guide by Tom White, O'Reilly, Yahoo!press"/>
+
 !SLIDE
 ## Références ##
 * <a href="http://hadoop.apache.org">http://hadoop.apache.org</a>
 * <a href="http://hive.apache.org">http://hive.apache.org</a>
 * <a href="http://pig.apache.org">http://pig.apache.org</a>
+* <a href="http://www.cascading.org">http://www.cascading.org</a>
 * <a href="http://github.com/mrwalker/cascading.jruby">http://github.com/mrwalker/cascading.jruby</a>
 * <a href="http://www.cloudera.com">http://www.cloudera.com</a>
 * <a href="http://aws.amazon.com/fr/elasticmapreduce">http://aws.amazon.com/fr/elasticmapreduce</a>
