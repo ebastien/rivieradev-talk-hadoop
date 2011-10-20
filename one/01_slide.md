@@ -39,7 +39,36 @@ Hadoop a été inspiré par les publications MapReduce, GoogleFS et BigTable de 
 <img src="problem4.png"/>
 
 !SLIDE
-## Bon vieux terminal... ##
+<div class="unreadable">
+<p>[...]</p>
+<p>The Earth Pulled by the Moon</p>
+<p>But it was part of the merit of Newton's mighty theory of gravitation
+that it furnished an explanation even of this age-old mystery. We can
+see, in broad outlines at any rate, that the theory of universal
+attraction can be applied to this case. For the moon, Newton taught us,
+pulls every particle of matter throughout the earth. If we imagine that
+part of the earth's surface which comprises the Pacific Ocean, for
+instance, to be turned towards the moon, we see that the moon's pull,
+_acting on the loose and mobile water_, would tend to heap it up into a
+sort of mound. The whole earth is pulled by the moon, but the water
+is more free to obey this pull than is the solid earth, although small
+tides are also caused in the earth's solid crust. It can be shown also
+that a corresponding hump would tend to be produced on the other side of
+the earth, owing, in this case, to the tendency of the water, being more
+loosely connected, to lag behind the solid earth. If the earth's surface
+were entirely fluid the rotation of the earth would give the impression
+that these two humps were continually travelling round the world, once
+every day. At any given part of the earth's surface, therefore, there
+would be two humps daily, i.e. two periods of high water. Such is the
+simplest possible outline of the gravitational theory of the tides.</p>
+<p>[...]</p>
+</div>
+<div class="title_desc">
+  <ul><li>The Outline of Science</li></ul>
+</div>
+
+!SLIDE
+## Bons vieux outils... ##
     @@@ sh
                        cat book.txt | \
     tr -s "[:punct:][:space:]" "\n" | \
@@ -58,7 +87,7 @@ Hadoop a été inspiré par les publications MapReduce, GoogleFS et BigTable de 
 
 !SLIDE
 ## Tâche "Map" ##
-Entrée: une partition des données
+Entrée: une partie des données
 
 Sortie: une collection de paires clé-valeur
 
