@@ -91,7 +91,6 @@
 </div>
 
 
-
 </div>
 </div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/2">
 <h2>Qui parle ?</h2>
@@ -103,30 +102,23 @@
 <li>Partisan du logiciel libre</li>
 <li>Ing&#xE9;nieur &#xE0; Amadeus</li>
 </ul>
-
 </div>
 </div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/3">
 <h2>D'apr&#xE8;s Wikipedia :</h2>
 
 <p><em>Hadoop est un <strong>framework Java libre</strong> destin&#xE9; aux applications distribu&#xE9;es et &#xE0; la <strong>gestion intensive des donn&#xE9;es</strong>.
 Il permet aux applications de travailler avec des milliers de n&#x153;uds et des <strong>p&#xE9;taoctets de donn&#xE9;es</strong>.
-Hadoop a &#xE9;t&#xE9; inspir&#xE9; par les publications MapReduce, GoogleFS et BigTable de Google.</em></p>
-</div>
+Hadoop a &#xE9;t&#xE9; inspir&#xE9; par les publications MapReduce, GoogleFS et BigTable de Google.</em></p></div>
 </div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/4">
-<h2>Quel est le probl&#xE8;me ?</h2>
-</div>
+<h2>Quel est le probl&#xE8;me ?</h2></div>
 </div><div class="slide" data-transition="none"><div class="content center" ref="one/01_slide/5">
-<p><img src="./file/one/problem1.png"/></p>
-</div>
+<p><img src="./file/one/problem1.png"/></p></div>
 </div><div class="slide" data-transition="none"><div class="content center" ref="one/01_slide/6">
-<p><img src="./file/one/problem2.png"/></p>
-</div>
+<p><img src="./file/one/problem2.png"/></p></div>
 </div><div class="slide" data-transition="none"><div class="content center" ref="one/01_slide/7">
-<p><img src="./file/one/problem3.png"/></p>
-</div>
+<p><img src="./file/one/problem3.png"/></p></div>
 </div><div class="slide" data-transition="none"><div class="content center" ref="one/01_slide/8">
-<p><img src="./file/one/problem4.png"/></p>
-</div>
+<p><img src="./file/one/problem4.png"/></p></div>
 </div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/9">
 <div class="unreadable">
 <p>[...]</p>
@@ -159,7 +151,6 @@ simplest possible outline of the gravitational theory of the tides.</p>
 </div>
 
 
-
 </div>
 </div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/10">
 <h2>Bons vieux outils...</h2>
@@ -168,8 +159,7 @@ simplest possible outline of the gravitational theory of the tides.</p>
 tr -s "[:punct:][:space:]" "\n" | \
                            sort | \
                         uniq &#x2013;c | \
-                            cat &gt; wordcounts</code></pre>
-</div>
+                            cat &gt; wordcounts</code></pre></div>
 </div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/11">
 <h2>MapReduce !</h2>
 
@@ -177,37 +167,29 @@ tr -s "[:punct:][:space:]" "\n" | \
                          MAPPER | \
                            sort | \
                         REDUCER | \
-                            cat &gt; wordcounts</code></pre>
-</div>
+                            cat &gt; wordcounts</code></pre></div>
 </div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/12">
 <h2>T&#xE2;che "Map"</h2>
 
 <p>Entr&#xE9;e: une partie des donn&#xE9;es</p>
 
-<p>Sortie: une collection de paires cl&#xE9;-valeur</p>
-</div>
+<p>Sortie: une collection de paires cl&#xE9;-valeur</p></div>
 </div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/13">
 <h2>T&#xE2;che "Reduce"</h2>
 
 <p>Entr&#xE9;e: toutes les valeurs pour une cl&#xE9;</p>
 
-<p>Sortie: r&#xE9;sultat final</p>
-</div>
+<p>Sortie: r&#xE9;sultat final</p></div>
 </div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/14">
-<h2>Hadoop Distributed File System</h2>
-</div>
+<h2>Hadoop Distributed File System</h2></div>
 </div><div class="slide" data-transition="none"><div class="content center" ref="one/01_slide/15">
-<p><img src="./file/one/layout1.png"/></p>
-</div>
+<p><img src="./file/one/layout1.png"/></p></div>
 </div><div class="slide" data-transition="none"><div class="content center" ref="one/01_slide/16">
-<p><img src="./file/one/layout2.png"/></p>
-</div>
+<p><img src="./file/one/layout2.png"/></p></div>
 </div><div class="slide" data-transition="none"><div class="content center" ref="one/01_slide/17">
-<p><img src="./file/one/flow1.png"/></p>
-</div>
+<p><img src="./file/one/flow1.png"/></p></div>
 </div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/18">
-<h2>Interfaces de programmation MapReduce</h2>
-</div>
+<h2>Interfaces de programmation MapReduce</h2></div>
 </div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/19">
 <h2>API Java</h2>
 
@@ -217,7 +199,6 @@ tr -s "[:punct:][:space:]" "\n" | \
 <li>La d&#xE9;finition des entr&#xE9;es et des sorties</li>
 <li>Le code compil&#xE9; dans un JAR</li>
 </ul>
-
 </div>
 </div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/20">
 <h2>&#xAB;Word Count&#xBB;, classe Map :</h2>
@@ -236,8 +217,7 @@ tr -s "[:punct:][:space:]" "\n" | \
     word.set(tokenizer.nextToken());
     output.collect(word, one);
   }
-}</code></pre>
-</div>
+}</code></pre></div>
 </div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/21">
 <h2>&#xAB;Word Count&#xBB;, classe Reduce :</h2>
 
@@ -252,8 +232,7 @@ tr -s "[:punct:][:space:]" "\n" | \
     sum += values.next().get();
   }
   output.collect(key, new IntWritable(sum));
-}</code></pre>
-</div>
+}</code></pre></div>
 </div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/22">
 <h2>Hadoop Streaming</h2>
 
@@ -262,7 +241,6 @@ tr -s "[:punct:][:space:]" "\n" | \
 <li>Un ex&#xE9;cutable pour la t&#xE2;che Reduce</li>
 <li>La d&#xE9;finition des entr&#xE9;es et des sorties</li>
 </ul>
-
 </div>
 </div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/23">
 <h2>&#xAB;Word Count&#xBB;, t&#xE2;che Map :</h2>
@@ -272,8 +250,7 @@ STDIN.each do |line|
   line.scan(/\w+/) do |word|
     STDOUT.puts "#{word}\t1"
   end
-end</code></pre>
-</div>
+end</code></pre></div>
 </div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/24">
 <h2>&#xAB;Word Count&#xBB;, t&#xE2;che Reduce :</h2>
 
@@ -287,14 +264,11 @@ STDIN.each do |row|
   end
   sum += v.to_i
 end
-STDOUT.puts "#{key}\t#{sum}" if key</code></pre>
-</div>
+STDOUT.puts "#{key}\t#{sum}" if key</code></pre></div>
 </div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/25">
-<h2>&#xC7;a peut devenir compliqu&#xE9;...</h2>
-</div>
+<h2>&#xC7;a peut devenir compliqu&#xE9;...</h2></div>
 </div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/26">
-<h2>Apache Hive</h2>
-</div>
+<h2>Apache Hive</h2></div>
 </div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/27">
 <h2>&#xAB;Word Count&#xBB; partiel, Hive :</h2>
 
@@ -303,11 +277,9 @@ STDOUT.puts "#{key}\t#{sum}" if key</code></pre>
 FROM Text
   INSERT OVERWRITE DIRECTORY "/tmp/wordcounts"
   SELECT word, COUNT(word) as totals
-  GROUP BY word;</code></pre>
-</div>
+  GROUP BY word;</code></pre></div>
 </div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/28">
-<h2>Apache Pig</h2>
-</div>
+<h2>Apache Pig</h2></div>
 </div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/29">
 <h2>&#xAB;Word Count&#xBB;, Pig :</h2>
 
@@ -315,11 +287,9 @@ FROM Text
 words = FOREACH lines GENERATE FLATTEN(TOKENIZE($0));
 grouped = GROUP words BY $0;
 counts = FOREACH grouped GENERATE group, COUNT(words);
-STORE counts INTO '/tmp/wordcounts' USING PigStorage();</code></pre>
-</div>
+STORE counts INTO '/tmp/wordcounts' USING PigStorage();</code></pre></div>
 </div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/30">
-<h2>Cascading</h2>
-</div>
+<h2>Cascading</h2></div>
 </div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/31">
 <h2>&#xAB;Word Count&#xBB;, Cascading/JRuby</h2>
 
@@ -336,8 +306,7 @@ STORE counts INTO '/tmp/wordcounts' USING PigStorage();</code></pre>
     end
     sink 'input', tap('/tmp/wordcounts')
   end
-end.complete(myproperties)</code></pre>
-</div>
+end.complete(myproperties)</code></pre></div>
 </div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/32">
 <h2>Hadoop au-del&#xE0; d'HDFS</h2>
 
@@ -346,7 +315,6 @@ end.complete(myproperties)</code></pre>
 <li>FTP et HTTP</li>
 <li>CloudStore</li>
 </ul>
-
 </div>
 </div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/33">
 <h2>Hadoop dans les nuages</h2>
@@ -355,7 +323,6 @@ end.complete(myproperties)</code></pre>
 <li>Amazon Elastic MapReduce</li>
 <li>Microsoft Windows Azure (bient&#xF4;t)</li>
 </ul>
-
 </div>
 </div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/34">
 <h2>Evaluer Hadoop chez soi</h2>
@@ -364,11 +331,9 @@ end.complete(myproperties)</code></pre>
 <li>Machine virtuelle Cloudera pour VirtualBox et KVM</li>
 <li><a href="http://www.cloudera.com/">http://www.cloudera.com/</a></li>
 </ul>
-
 </div>
 </div><div class="slide" data-transition="none"><div class="content center" ref="one/01_slide/35">
-<p><img src="./file/one/hadoop-defguide.jpg" alt="Hadoop - The Definitive Guide by Tom White, O'Reilly, Yahoo!press"/></p>
-</div>
+<p><img src="./file/one/hadoop-defguide.jpg" alt="Hadoop - The Definitive Guide by Tom White, O'Reilly, Yahoo!press"/></p></div>
 </div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/36">
 <h2>R&#xE9;f&#xE9;rences</h2>
 
@@ -382,7 +347,6 @@ end.complete(myproperties)</code></pre>
 <li><a href="http://aws.amazon.com/fr/elasticmapreduce">http://aws.amazon.com/fr/elasticmapreduce</a></li>
 <li><a href="http://www.microsoft.com/windowsazure">http://www.microsoft.com/windowsazure</a></li>
 </ul>
-
 </div>
 </div></div>
 
